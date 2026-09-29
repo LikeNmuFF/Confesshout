@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background: linear-gradient(to bottom right, #1A0F0B 20%, #471c1b 55%, #832533);
+}
