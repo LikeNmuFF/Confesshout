@@ -1,0 +1,32 @@
+#request{
+    background-color: #321912;
+    height: 30%;
+    border: solid #683325 1px;
+    border-radius: 15px;
+}
+
+.container{
+    width: 90%;
+}
+
+.empty{
+    background: linear-gradient(60deg,  #572a17 0%, #572a17 35%, #64301a 35%, #572a17 100%);
+    border-radius: 15px;
+    color: white;
+    overflow: auto;
+
+    border: solid #e38561 1px;
+}
+
+h1{
+    background: linear-gradient(to right, rgb(255, 123, 0) 0%, rgb(255, 123, 0) 30%, rgb(255, 197, 142) 50%, rgb(255, 197, 142) 100%);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 12px rgb(255, 123, 0);
+    font-size: 5rem;
+}
+
+.seal{
+    box-shadow: 0 0 50px -10px rgb(255, 123, 0);
+    border-radius: 50%;
+}
