@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/static/css/display.css">
+</head>
+
+<body>
+    <div class="d-flex flex-column h-100 justify-content-center">
+        <div class="header row m-0 g-3 m-3 p-2">
+            <div>
+                <img src="#" alt="Phoenix">
+            </div>
+            <div>
+                <h4 class="fw-bold m-0">Phonix Freedon Wall</h4>
+                <p class="mb-1">Live Message Display</p>
+            </div>
+        </div>
+        <div class="row h-100 g-3 m-0" id="">
+            <div id="empty" class="w-100">
+                <div class="d-flex justify-content-center mt-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#aa6e4b"
+                        class="bi bi-clipboard-data d-block" viewBox="0 0 16 16">
+                        <path
+                            d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z" />
+                        <path
+                            d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+                        <path
+                            d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+                    </svg>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h4 class="fw-bold m-0">Awaiting Messages</h4>
+                        <p>Share you thoughts and watch them appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer row g-3 justify-content-center align-items-center m-3 p-2">
+            <div class="col-md-4 text-md-right text-center" id="displayed_message">Displaying 0 Messages</div>
+            <div class="text-center">Live</div>
+            <div class="col-md-4 text-md-left text-center">Auto-expire: 3h</div>
+        </div>
+    </div>
+</body>
+
+</html>
