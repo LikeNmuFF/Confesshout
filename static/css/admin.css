@@ -5,16 +5,10 @@
     border-radius: 15px;
 }
 
-.container{
-    width: 90%;
-}
-
 .empty{
     background: linear-gradient(60deg,  #572a17 0%, #572a17 35%, #64301a 35%, #572a17 100%);
     border-radius: 15px;
     color: white;
-    overflow: auto;
-
     border: solid #e38561 1px;
 }
 

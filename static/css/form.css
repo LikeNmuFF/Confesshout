@@ -1,0 +1,91 @@
+.form-container{
+    background: #311a12;
+    border-radius: 15px;
+    border: solid #5a382c 2px;
+}
+
+.form-container p{
+    color: white;
+}
+
+.header h1{
+    background: linear-gradient(to right, rgb(255, 123, 0) 0%, rgb(255, 123, 0) 30%, rgb(255, 197, 142) 50%, rgb(255, 197, 142) 100%);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 12px rgb(255, 123, 0);
+    font-size: 5rem;
+}
+
+.form-container .form-group input[type="text"]{
+    border-radius: 10px;
+    background: #311a12;
+    border: solid #91523b 1px;
+    width: 100%;
+    color: white;
+}
+
+.form-container .form-group input[type="text"]:focus{
+    outline: none;
+    box-shadow: 0 0 15px -5px #e4a48d;
+}
+
+.form-container .form-check input[type="checkbox"]{
+    accent-color: #f56c31;
+    width: 15px;
+    height: 15px;
+    border: 10%;
+}
+
+.form-container .form-check label{
+    border: solid #91523b 1px;
+    border-radius: 10px;
+}
+
+.form-container .form-check label:hover {
+    background: #8f4c35;
+}
+
+.form-container .form-check label.checked {
+    background: #452216;
+}
+
+.form-container .form-group select{
+    background: #311a12;
+    border: solid #91523b 1px;
+    color: white;
+}
+
+.form-container .form-group select:hover{
+    background: #8f4c35;
+}
+
+.form-container .form-group select{
+    border-radius: 10px;
+    background: #311a12;
+    border: solid #91523b 1px;
+    width: 100%;
+    color: white;
+}
+
+.form-container .form-group textarea{
+    border-radius: 10px;
+    background: #311a12;
+    border: solid #91523b 1px;
+    color: white;
+    height: 150px;
+}
+
+.form-container .form-group textarea:focus{
+    outline: none;
+    box-shadow: 0 0 15px -5px #e4a48d;
+}
+
+#textarea_char_count{
+    color: #e5c98e;
+}
+
+.form-container .form-group button{
+    background: linear-gradient(to right, #fe7031, #f88f22);
+    color: white;
+    border-radius: 15px;
+}
