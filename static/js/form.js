@@ -3,12 +3,19 @@ function handleChange(e) {
 
     const label = e.target.parentElement;
 
-    console.log(label.classList);
+    const name_field = document.getElementById("name_field");
+
+    label.classList.toggle("checked");
+    name_field.classList.toggle("disabled");
 
     if (status) {
-        label.classList.toggle("checked");
+        
+        name_field.value = "";
+        name_field.innerHTML = "";
+
+        name_field.disabled = true
     } else {
-        label.classList.toggle('checked');
+        name_field.disabled = false
     }
 }
 

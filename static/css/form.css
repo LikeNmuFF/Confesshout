@@ -24,6 +24,10 @@
     color: white;
 }
 
+.form-container .form-group input.disabled{
+    background: #582e1e80;
+}
+
 .form-container .form-group input[type="text"]:focus{
     outline: none;
     box-shadow: 0 0 15px -5px #e4a48d;
