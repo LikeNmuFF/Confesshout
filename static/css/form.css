@@ -24,13 +24,18 @@
     color: white;
 }
 
+.form-container .form-group input[type="text"]:focus,
+.form-container .form-group input[type="text"]:hover{
+    outline: none;
+    box-shadow: 0 0 15px -5px #e4a48d;
+}
+
 .form-container .form-group input.disabled{
     background: #582e1e80;
 }
 
-.form-container .form-group input[type="text"]:focus{
-    outline: none;
-    box-shadow: 0 0 15px -5px #e4a48d;
+.form-container .form-group input.disabled:hover{
+    box-shadow: none;
 }
 
 .form-container .form-check input[type="checkbox"]{
@@ -79,7 +84,8 @@
     height: 150px;
 }
 
-.form-container .form-group textarea:focus{
+.form-container .form-group textarea:focus,
+.form-container .form-group textarea:hover{
     outline: none;
     box-shadow: 0 0 15px -5px #e4a48d;
 }

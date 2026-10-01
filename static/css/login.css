@@ -1,0 +1,39 @@
+.card{
+    background: #321912;
+    background-clip: border-box;
+    border: solid #91523b 1px;
+    border-radius: 10px;
+}
+
+.form-container .form-group input[type="text"], 
+.form-container .form-group input[type="password"]{
+    border-radius: 10px;
+    background: #311a12;
+    border: solid #91523b 1px;
+    color: white;
+}
+
+.form-container .form-group input[type="text"]:focus,  
+.form-container .form-group input[type="password"]:focus, 
+.form-container .form-group input[type="text"]:hover, 
+.form-container .form-group input[type="password"]:hover{
+    outline: none;
+    box-shadow: 0 0 15px -5px #e4a48d;
+}
+
+.btn{
+    background: linear-gradient(to right, #fe7031, #f88f22);
+    color: white;
+    border-radius: 15px;
+}
+
+.btn:hover{
+    box-shadow: 0 0 15px -5px #f88f22;
+}
+
+/* .seal-backed{
+    background-image: url(/static/images/Basilan_State_University.svg.webp);
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: center;
+} */

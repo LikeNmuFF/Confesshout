@@ -2,27 +2,36 @@ html {
   box-sizing: border-box;
 }
 
-body, html{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    color: #e5c98e;
-    font-size: 1rem;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  color: #e5c98e;
+  font-size: 1rem;
 }
 
-body{
-    background: linear-gradient(to bottom right, #1A0F0B 20%, #471c1b 55%, #832533);
+.ccs-phoenix {
+  background: linear-gradient(to right, rgb(255, 123, 0) 0%, rgb(255, 123, 0) 30%, rgb(255, 197, 142) 50%, rgb(255, 197, 142) 100%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgb(255, 123, 0);
+  font-size: 4rem;
 }
 
-.overflow-y-auto{
+body {
+  background: linear-gradient(to bottom right, #1A0F0B 20%, #471c1b 55%, #832533);
+}
+
+.overflow-y-auto {
   overflow-y: auto;
-  scrollbar-width: none; 
+  scrollbar-width: none;
   scrollbar-color: #421b19 transparent;
 }
 
 @media (max-width: 600px) {
-  .h-sm-100{
+  .h-sm-100 {
     height: 100%;
   }
 }
