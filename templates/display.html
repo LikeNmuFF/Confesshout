@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="d-flex flex-column h-100 justify-content-center">
+    <div class="d-flex flex-column h-100 justify-content-center overflow-y-auto">
         <div class="header row m-0 g-3 m-3 p-2">
             <div>
                 <img src="#" alt="Phoenix">
@@ -23,7 +23,7 @@
                 <p class="mb-1">Live Message Display</p>
             </div>
         </div>
-        <div class="row h-100 g-3 m-0" id="messages">
+        <div class=" row p-2 m-0 overflow-y-auto" id="messages">
             <div id="empty" class="w-100">
                 <div class="d-flex justify-content-center mt-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#aa6e4b"
@@ -50,6 +50,8 @@
             <div class="col-md-4 text-md-left text-center">Auto-expire: 3h</div>
         </div>
     </div>
+
+    <script src="/static/js/display.js"></script>
 </body>
 
 </html>
