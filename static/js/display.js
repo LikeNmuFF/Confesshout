@@ -106,4 +106,68 @@ setInterval(async () => {
         console.error(error);
     }
 
-}, 5000)
+}, 5000);
+
+let scrollDownID;
+let goingDown = true;
+const message_panel = document.getElementById("messages");
+
+function startScrollDown() {
+    if (goingDown && !scrollDownID) {
+        scrollDownID = setInterval(() => {
+            message_panel.scrollTop = message_panel.scrollTop + 1;
+
+            if(Math.abs(message_panel.scrollHeight - message_panel.clientHeight - message_panel.scrollTop) <= 1){
+                goingDown = false;
+            }
+        }, 20);
+    }
+}
+
+function stopScrollDown(){
+    clearInterval(scrollDownID);
+    scrollDownID = null;
+}
+
+let scrollUpID;
+
+function startScrollUp(){
+    if(!goingDown && !scrollUpID){
+        scrollUpID = setInterval(() => {
+            message_panel.scrollTop = message_panel.scrollTop - 1;
+
+            if(message_panel.scrollTop === 0){
+                goingDown = true;
+            }
+        }, 20);
+    }
+}
+
+function stopScrollUp(){
+    clearInterval(scrollUpID);
+
+    scrollUpID = null;
+}
+
+let autoScrollID;
+
+function startAutoScroll(){
+    if(!autoScrollID){
+        autoScrollID = setInterval(() => {
+            if(goingDown){
+                stopScrollUp()
+                startScrollDown();
+            }else{
+                stopScrollDown();
+                startScrollUp();
+            }
+        }, 20);
+    }
+}
+
+function stopAutoScroll(){
+    clearInterval(autoScrollID);
+    autoScrollID = null;
+}
+
+startAutoScroll();
