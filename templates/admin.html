@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+  
+{% head block %}
     <title>Admin</title>
 
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/admin.css">
-</head>
+{% endblock %}
 
-<body>
+{% content block %}
+
     <div class="d-flex w-100 h-100 justify-content-center">
         <div class="mt-5 container p-0 m-0 w-100">
             <div class="text-center">
@@ -49,6 +47,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+{% endblock %}
