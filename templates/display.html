@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    {% block title %}
+        <title>Display Messages</title>
+    {% endblock %}
 
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    {% block css %}
 
-    <link rel="stylesheet" href="/static/css/display.css">
-</head>
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/display.css') }}">
+    {% endblock %}
 
-<body>
+{% block content %}
     <div class="d-flex flex-column h-100 justify-content-center">
         <div class="header row m-0 g-3 m-3 p-2">
             <div>
@@ -38,8 +38,26 @@
                 </div>
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h4 class="fw-bold m-0">Awaiting Messages</h4>
-                        <p>Share you thoughts and watch them appear here</p>
+                        {% if messages %}
+
+                            <h4 class="fw-bold m-0">Live Messages</h4>
+                            <p>Here are the latest messages:</p>
+                        {% for message in messages %}
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ message.username }}</h5>
+                                    <p class="card-text">{{ message.message }}</p>
+                                    <p class="card-text">{{ message.year_level }}</p>
+                                    <p class="card-text">{{ message.course }}</p>
+                                    <p class="card-text"><small class="text-muted">Posted on {{ message.created_at }}</small></p>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        {% else %}
+                            <h4 class="fw-bold m-0">Awaiting Messages</h4>
+                            <p>Share your thoughts and watch them appear here</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -50,6 +68,4 @@
             <div class="col-md-4 text-md-left text-center">Auto-expire: 3h</div>
         </div>
     </div>
-</body>
-
-</html>
+{% endblock %}

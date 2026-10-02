@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, redirect, jsonify, url_for, request, session
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -6,9 +7,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+DB_PATH = os.path.join(BASE_DIR, "db", "confeshout.db")
 
 par = 'Parageyan 2026'
-conn = sqlite3.connect("db/confeshout.db")
+conn = sqlite3.connect(DB_PATH)
 cursor = conn.cursor()
 
 
