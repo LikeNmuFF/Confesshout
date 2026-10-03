@@ -32,7 +32,7 @@ function displayMessage(parent, data) {
     card_body.append(card_text);
     card_body.append(card_footer);
 
-    card_text.innerHTML = data.content;
+    card_text.textContent = data.content;
 
     const userText = document.createElement('div');
     if (data.username === "Anon") {
@@ -43,7 +43,7 @@ function displayMessage(parent, data) {
         userText.classList.add("username");
     }
     userText.classList.add("py-1");
-    userText.innerHTML = data.username;
+    userText.textContent = data.username;
 
     card_footer.append(userText);
 
@@ -52,7 +52,7 @@ function displayMessage(parent, data) {
     course.classList.add('mx-2');
     course.classList.add('py-1');
     course.classList.add('px-2');
-    course.innerHTML = data.course;
+    course.textContent = data.course;
 
     card_footer.append(course);
 
@@ -60,7 +60,7 @@ function displayMessage(parent, data) {
     year.classList.add('year-level');
     year.classList.add('py-1');
     year.classList.add('px-2');
-    year.innerHTML = data.year;
+    year.textContent = data.year;
 
     card_footer.append(year);
 
@@ -70,12 +70,16 @@ function displayMessage(parent, data) {
     time.classList.add("text-right");
     time.classList.add("py-1");
     time.classList.add("ml-auto");
-    time.innerHTML = data.timestamp;
+    time.textContent = data.timestamp;
 
     card_footer.append(time);
 }
-
+let isLoading = false;
 setInterval(async () => {
+
+    if (isLoading) return;
+
+    isLoading = true;
 
     const api = "/static/js/dummy/display.json";
 
@@ -104,6 +108,8 @@ setInterval(async () => {
         }
     } catch (error) {
         console.error(error);
+    } finally {
+        isLoading = false;
     }
 
 }, 5000);
@@ -117,33 +123,33 @@ function startScrollDown() {
         scrollDownID = setInterval(() => {
             message_panel.scrollTop = message_panel.scrollTop + 1;
 
-            if(Math.abs(message_panel.scrollHeight - message_panel.clientHeight - message_panel.scrollTop) <= 1){
+            if (Math.abs(message_panel.scrollHeight - message_panel.clientHeight - message_panel.scrollTop) <= 1) {
                 goingDown = false;
             }
         }, 20);
     }
 }
 
-function stopScrollDown(){
+function stopScrollDown() {
     clearInterval(scrollDownID);
     scrollDownID = null;
 }
 
 let scrollUpID;
 
-function startScrollUp(){
-    if(!goingDown && !scrollUpID){
+function startScrollUp() {
+    if (!goingDown && !scrollUpID) {
         scrollUpID = setInterval(() => {
             message_panel.scrollTop = message_panel.scrollTop - 1;
 
-            if(message_panel.scrollTop === 0){
+            if (message_panel.scrollTop === 0) {
                 goingDown = true;
             }
         }, 20);
     }
 }
 
-function stopScrollUp(){
+function stopScrollUp() {
     clearInterval(scrollUpID);
 
     scrollUpID = null;
@@ -151,13 +157,13 @@ function stopScrollUp(){
 
 let autoScrollID;
 
-function startAutoScroll(){
-    if(!autoScrollID){
+function startAutoScroll() {
+    if (!autoScrollID) {
         autoScrollID = setInterval(() => {
-            if(goingDown){
+            if (goingDown) {
                 stopScrollUp()
                 startScrollDown();
-            }else{
+            } else {
                 stopScrollDown();
                 startScrollUp();
             }
@@ -165,7 +171,7 @@ function startAutoScroll(){
     }
 }
 
-function stopAutoScroll(){
+function stopAutoScroll() {
     clearInterval(autoScrollID);
     autoScrollID = null;
 }

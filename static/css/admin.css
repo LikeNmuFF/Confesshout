@@ -1,6 +1,5 @@
 #request{
     background-color: #321912;
-    height: 30%;
     border: solid #683325 1px;
     border-radius: 15px;
 }
@@ -23,4 +22,8 @@ h1{
 .seal{
     box-shadow: 0 0 50px -10px rgb(255, 123, 0);
     border-radius: 50%;
+}
+
+#requests-table{
+    display: none;
 }
