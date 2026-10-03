@@ -24,7 +24,7 @@
             </div>
 
             <div id="request" class="w-100 p-3">
-                <div class="empty h-100">
+                <div class="empty h-100 p-3">
                     <div class="d-flex h-100 justify-content-center align-items-center flex-column">
                         <div class="mt-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#e8d9f0bb"
@@ -42,6 +42,23 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="table-responsive" id="requests-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">SENDER</th>
+                                <th scope="col">COURSES</th>
+                                <th scope="col">YEAR</th>
+                                <th scope="col">MESSAGES</th>
+                                <th scope="col">SUBMITTED</th>
+                                <th scope="col">ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="footer text-center mt-2">
@@ -49,6 +66,8 @@
             </div>
         </div>
     </div>
+
+    <script src="/static/js/admin.js"></script>
 </body>
 
 </html>
