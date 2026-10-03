@@ -3,6 +3,7 @@ const empty_message = document.querySelector(".empty");
 const table_container = request_panel.lastElementChild;
 const table = table_container.lastElementChild;
 const tbody = table.lastElementChild;
+const pending_messages = table_container.firstElementChild;
 
 let isLoading = false;
 
@@ -77,6 +78,7 @@ setInterval( async () => {
 
                 tbody.innerHTML = "";
 
+                pending_messages.textContent = `Pending Messages (${data.length})`;
                 data.forEach(d => populateTable(d));
             }
         }

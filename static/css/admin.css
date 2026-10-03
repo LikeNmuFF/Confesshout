@@ -27,3 +27,7 @@ h1{
 #requests-table{
     display: none;
 }
+
+#pending-message{
+    color: rgb(255, 123, 0);
+}
