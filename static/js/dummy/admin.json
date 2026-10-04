@@ -1,0 +1,101 @@
+[
+    {
+        "id": "msg_001",
+        "sender": "Anonymous",
+        "course": "BSIT",
+        "year_level": "4th Year",
+        "message_content": "Hello World!",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "8:15 AM",
+        "status": "pending",
+        "avatar_initials": "AN"
+    },
+    {
+        "id": "msg_002",
+        "sender": "Juan Dela Cruz",
+        "course": "BSCS",
+        "year_level": "3rd Year",
+        "message_content": "Requesting access to the laboratory server for thesis testing.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "9:42 AM",
+        "status": "pending",
+        "avatar_initials": "JD"
+    },
+    {
+        "id": "msg_003",
+        "sender": "Maria Clara",
+        "course": "BSIS",
+        "year_level": "2nd Year",
+        "message_content": "Inquiry regarding the schedule of the upcoming intramurals.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "10:05 AM",
+        "status": "pending",
+        "avatar_initials": "MC"
+    },
+    {
+        "id": "msg_004",
+        "sender": "Anonymous",
+        "course": "BSIT",
+        "year_level": "1st Year",
+        "message_content": "I lost my student ID inside the cafeteria. Please help.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "10:30 AM",
+        "status": "pending",
+        "avatar_initials": "AN"
+    },
+    {
+        "id": "msg_005",
+        "sender": "Pedro Penduko",
+        "course": "BSECE",
+        "year_level": "4th Year",
+        "message_content": "Submission of final requirements for graduation clearance.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "11:15 AM",
+        "status": "pending",
+        "avatar_initials": "PP"
+    },
+    {
+        "id": "msg_005",
+        "sender": "Pedro Penduko",
+        "course": "BSECE",
+        "year_level": "4th Year",
+        "message_content": "Submission of final requirements for graduation clearance.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "11:15 AM",
+        "status": "pending",
+        "avatar_initials": "PP"
+    },
+    {
+        "id": "msg_005",
+        "sender": "Pedro Penduko",
+        "course": "BSECE",
+        "year_level": "4th Year",
+        "message_content": "Submission of final requirements for graduation clearance.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "11:15 AM",
+        "status": "pending",
+        "avatar_initials": "PP"
+    },
+    {
+        "id": "msg_005",
+        "sender": "Pedro Penduko",
+        "course": "BSECE",
+        "year_level": "4th Year",
+        "message_content": "Submission of final requirements for graduation clearance.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "11:15 AM",
+        "status": "pending",
+        "avatar_initials": "PP"
+    },
+    {
+        "id": "msg_005",
+        "sender": "Pedro Penduko",
+        "course": "BSECE",
+        "year_level": "4th Year",
+        "message_content": "Submission of final requirements for graduation clearance.",
+        "submitted_date": "Sep 25, 2025",
+        "submitted_time": "11:15 AM",
+        "status": "pending",
+        "avatar_initials": "PP"
+    }
+]
