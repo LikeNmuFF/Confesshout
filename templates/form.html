@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/form.css">
+</head>
+
+<body>
+    <div class="row justify-content-center h-100 w-100 m-0 overflow-y-auto">
+        <div class="col-sm-12 col-md-6 h-sm-100 p-0 overflow-y-auto">
+            <div>
+                <img src="#" alt="#">
+            </div>
+
+            <div class="header text-center">
+                <h1 class="p-0 m-0">CCS Phoenix</h1>
+                <p class="p-0 m-0">FREEDOM WALL</p>
+            </div>
+
+            <div class="form-container row g-3 mt-5 mb-3 mx-3">
+                <div class="w-100 p-2">
+                    <div class="d-flex justify-content-center mt-4">
+                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9.85986V14.1499" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M9 8.42993V15.5699" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 7V17" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M15 8.42993V15.5699" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M18 9.85986V14.1499" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <h4 class="text-center ml-2">Share Your Voice</h4>
+                    </div>
+                    <div class="w-100 text-center">
+                        <p>Open for any messages! Shoutouts, feedback, ideas, or thoughts.</p>
+                    </div>
+
+                    <div class="w-100">
+                        <form class="row g-2 ml-3 mr-3">
+                            <div class="form-group col-md-6 ">
+                                <label class="w-100">
+                                    Your Name (Max 10 chars)
+
+                                    <input type="text" name="name"  class="form-control mt-1" maxlength="10" id="name_field">
+                                </label>
+                            </div>
+
+                            <div class="w-100 col-12">
+                                <div class="form-group  form-check p-0">
+                                <label class="w-100 p-3">
+                                    <input type="checkbox" name="is_anonymous" id="mr-2" onchange="handleChange(event)">
+
+                                    Post as Anonymous
+                                </label>
+                            </div>
+                            </div>
+                            
+                            <div class="form-group col-12 col-md-6">
+                                <label class="w-100 p-0">
+                                    Year Level
+
+                                    <select class="custom-select my-1 mr-sm-2" id="select_year">
+                                        <option value="">Select year Level</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                             <div class="form-group col-12 col-md-6">
+                                <label class="w-100 p-0">
+                                    Course
+
+                                    <select class="custom-select my-1 mr-sm-2" id="select_course">
+                                        <option value="">Select Course</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="form-group col-12">
+                                <label class="w-100">
+                                    Your Message (max 50 chars)
+
+                                    <textarea name="message" class="w-100 mt-2 p-2" id="message_area" maxlength="50"></textarea>
+
+                                    <p id="textarea_char_count" class="text-right">
+                                        0/50 Characters
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div class="form-group col-12">
+                                <button type="submit" class="btn w-100 mb-3 p-2">
+                                    Launch Message
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/form.js"></script>
+    <script type="module" src="/static/js/form_module.js"></script>
+</body>
+
+</html>

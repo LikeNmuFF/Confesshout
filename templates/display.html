@@ -1,19 +1,19 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-    {% block title %}
-        <title>Display Messages</title>
-    {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
 
-    {% block css %}
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 
-   
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/display.css') }}">
-    {% endblock %}
+    <link rel="stylesheet" href="/static/css/display.css">
+</head>
 
-{% block content %}
-    <div class="d-flex flex-column h-100 justify-content-center">
+<body>
+    <div class="d-flex flex-column h-100 justify-content-center overflow-y-auto">
         <div class="header row m-0 g-3 m-3 p-2">
             <div>
                 <img src="#" alt="Phoenix">
@@ -23,7 +23,7 @@
                 <p class="mb-1">Live Message Display</p>
             </div>
         </div>
-        <div class="row h-100 g-3 m-0" id="messages">
+        <div class=" row p-2 m-0 overflow-y-auto" id="messages">
             <div id="empty" class="w-100">
                 <div class="d-flex justify-content-center mt-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#aa6e4b"
@@ -68,4 +68,8 @@
             <div class="col-md-4 text-md-left text-center">Auto-expire: 3h</div>
         </div>
     </div>
-{% endblock %}
+
+    <script src="/static/js/display.js"></script>
+</body>
+
+</html>
