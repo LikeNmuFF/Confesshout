@@ -25,12 +25,14 @@ cursor.execute('''
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS user(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT,
-        password TEXT,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
         role TEXT DEFAULT 'user'
     )
 ''')
 
+
 conn.commit()
 conn.close()
 print("success")
+

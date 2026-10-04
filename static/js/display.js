@@ -32,7 +32,7 @@ function displayMessage(parent, data) {
     card_body.append(card_text);
     card_body.append(card_footer);
 
-    card_text.textContent = data.content;
+    card_text.textContent = data.message;
 
     const userText = document.createElement('div');
     if (data.username === "Anon") {
@@ -60,7 +60,7 @@ function displayMessage(parent, data) {
     year.classList.add('year-level');
     year.classList.add('py-1');
     year.classList.add('px-2');
-    year.textContent = data.year;
+    year.textContent = data.year_level;
 
     card_footer.append(year);
 
@@ -70,7 +70,7 @@ function displayMessage(parent, data) {
     time.classList.add("text-right");
     time.classList.add("py-1");
     time.classList.add("ml-auto");
-    time.textContent = data.timestamp;
+    time.textContent = data.created_at;
 
     card_footer.append(time);
 }
@@ -81,7 +81,7 @@ setInterval(async () => {
 
     isLoading = true;
 
-    const api = "/static/js/dummy/display.json";
+    const api = "/api/display";
 
     try {
         const result = await fetch(api);

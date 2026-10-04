@@ -1,4 +1,4 @@
-export const YEAR_LEVEL = [
+export const year_level = [
     {
         label: "1st Year", value: "1st"
     },
@@ -13,27 +13,17 @@ export const YEAR_LEVEL = [
     }
 ]
 
-export const COURSES = [
-    // Graduate & Postgraduate Programs
-    { label: "Ed.D.", value: "EDD" },
-    { label: "Ph.D.", value: "PHD" },
-    { label: "DPA", value: "DPA" },
-    { label: "MPA", value: "MPA" },
-    { label: "MAEd", value: "MAED" },
-    { label: "MATE", value: "MATE" },
+export const course = [
+
 
     // Undergraduate Programs
     { label: "BAELS", value: "BAELS" },
-    { label: "BAPoS", value: "BAPOS" },
-    { label: "BAIS", value: "BAIS" },
-    { label: "BSBio", value: "BSBIO" },
-    { label: "BSMath", value: "BSMATH" },
+    { label: "BAPoS", value: "BAPOS" },,
     { label: "BSSW", value: "BSSW" },
     { label: "BEEd", value: "BEED" },
     { label: "BSEd", value: "BSED" },
     { label: "BCEd", value: "BCED" },
     { label: "BSBA", value: "BSBA" },
-    { label: "BSOA", value: "BSOA" },
     { label: "BSHM", value: "BSHM" },
     { label: "BPA", value: "BPA" },
     { label: "BSCrim", value: "BSCRIM" },
@@ -41,8 +31,6 @@ export const COURSES = [
     { label: "BSND", value: "BSND" },
     { label: "BSIT", value: "BSIT" },
     { label: "BSCS", value: "BSCS" },
-    { label: "BSIndT", value: "BSINDT" },
     { label: "BSA", value: "BSA" },
-    { label: "BSF", value: "BSF" },
-    { label: "BSAgEd", value: "BSAGED" }
+
 ];

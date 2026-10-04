@@ -27,27 +27,29 @@
                     </div>
 
                     <div class="form-container">
-                        <form>
-                            <div class="form-group">
-                                <label class="w-100">
-                                    Username
+                      <form method="post" action="/admin/login">
+                        {% if message %}
+                            <div class="alert alert-danger">{{ message }}</div>
+                        {% endif %}
 
-                                    <input type="text" class="form-control">
-                                </label>
-                            </div>
+                        <div class="form-group">
+                            <label class="w-100">
+                                Username
+                                <input type="text" name="username" class="form-control">
+                            </label>
+                        </div>
 
-                            <div class="form-group">
-                                <label class="w-100">
-                                    Password
+                        <div class="form-group">
+                            <label class="w-100">
+                                Password
+                                <input type="password" name="password" class="form-control">
+                            </label>
+                        </div>
 
-                                    <input type="password" class="form-control">
-                                </label>
-                            </div>
-
-                            <button class="btn w-100">
-                                Login
-                            </button>
-                        </form>
+                        <button type="submit" class="btn w-100">
+                            Login
+                        </button>
+                    </form>
                     </div>
                 </div>
             </div>

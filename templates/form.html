@@ -47,12 +47,12 @@
                     </div>
 
                     <div class="w-100">
-                        <form class="row g-2 ml-3 mr-3">
+                        <form class="row g-2 ml-3 mr-3" method='post'>
                             <div class="form-group col-md-6 ">
                                 <label class="w-100">
                                     Your Name (Max 10 chars)
 
-                                    <input type="text" name="name"  class="form-control mt-1" maxlength="10" id="name_field">
+                                    <input type="text" name="username"  class="form-control mt-1" maxlength="10" id="name_field">
                                 </label>
                             </div>
 
@@ -70,7 +70,7 @@
                                 <label class="w-100 p-0">
                                     Year Level
 
-                                    <select class="custom-select my-1 mr-sm-2" id="select_year">
+                                    <select class="custom-select my-1 mr-sm-2" id="select_year" name="year_level">
                                         <option value="">Select year Level</option>
                                     </select>
                                 </label>
@@ -80,7 +80,7 @@
                                 <label class="w-100 p-0">
                                     Course
 
-                                    <select class="custom-select my-1 mr-sm-2" id="select_course">
+                                    <select class="custom-select my-1 mr-sm-2" id="select_course" name="course">
                                         <option value="">Select Course</option>
                                     </select>
                                 </label>
@@ -88,12 +88,12 @@
 
                             <div class="form-group col-12">
                                 <label class="w-100">
-                                    Your Message (max 50 chars)
+                                    Your Message (max 150 chars)
 
-                                    <textarea name="message" class="w-100 mt-2 p-2" id="message_area" maxlength="50"></textarea>
+                                    <textarea name="message" class="w-100 mt-2 p-2" id="message_area" maxlength="150"></textarea>
 
                                     <p id="textarea_char_count" class="text-right">
-                                        0/50 Characters
+                                        0/150 Characters
                                     </p>
                                 </label>
                             </div>
@@ -101,6 +101,7 @@
                             <div class="form-group col-12">
                                 <button type="submit" class="btn w-100 mb-3 p-2">
                                     Launch Message
+                                   
                                 </button>
                             </div>
 

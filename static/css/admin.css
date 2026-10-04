@@ -24,10 +24,6 @@ h1{
     border-radius: 50%;
 }
 
-#requests-table{
-    display: none;
-}
-
 #pending-message{
     color: rgb(255, 123, 0);
 }
