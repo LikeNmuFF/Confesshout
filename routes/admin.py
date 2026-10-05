@@ -1,8 +1,16 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, session, url_for
 import sqlite3
 import os
 
 admin_bp = Blueprint('admin', __name__, template_folder='../templates')
+
+
+@admin_bp.before_request
+def require_admin():
+    if request.endpoint == 'admin.admin_login' or session.get('is_admin') is True:
+        return None
+    return redirect(url_for('admin.admin_login'))
+
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DB_PATH = os.path.join(BASE_DIR, "db", "database.db")
@@ -48,8 +56,9 @@ def admin_login():
         password = request.form.get("password")
 
         if check_admin(username, password):
-            pending = get_pending_messages()
-            return render_template('admin.html', message="Welcome Admin!", pending=pending)
+            session.clear()
+            session["is_admin"] = True
+            return redirect(url_for('admin.admin'))
         return render_template('login.html', message="Invalid credentials. Please try again.")
     return render_template('login.html')
 
