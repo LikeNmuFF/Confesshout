@@ -16,7 +16,8 @@ def api_display():
         '''
         SELECT message, username, course, year_level, created_at
         FROM submission
-        WHERE status = "approved"
+        WHERE status = "approved" 
+        AND created_at >= datetime('now', '-3 hours')
         ORDER BY created_at DESC
         '''
     )
