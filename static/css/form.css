@@ -16,6 +16,12 @@
     font-size: 5rem;
 }
 
+.form-phoenix-logo {
+    width: clamp(100px, 18vw, 160px);
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 .form-container .form-group input[type="text"]{
     border-radius: 10px;
     background: #311a12;

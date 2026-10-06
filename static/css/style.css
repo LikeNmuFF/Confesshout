@@ -24,6 +24,15 @@ body {
   background: linear-gradient(to bottom right, #1A0F0B 20%, #471c1b 55%, #832533);
 }
 
+.phoenix-logo {
+  display: block;
+  width: clamp(70px, 12vw, 120px);
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
   scrollbar-width: none;

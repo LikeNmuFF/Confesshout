@@ -11,13 +11,17 @@
 
     <link rel="stylesheet" href="/static/css/display.css">
 
-    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='images/phoenix.png') }}" type="image/png">
 </head>
 
 <body>
     <div class="d-flex flex-column h-100 justify-content-center overflow-y-auto">
-        <div class="header row m-0 g-3 m-3 p-2">
-            <div>
+        <div class="header row align-items-center m-0 g-3 m-3 p-2">
+            <div class="col-auto d-flex align-items-center">
+                <img class="phoenix-logo" src="{{ url_for('static', filename='images/phoenix.png') }}"
+                    alt="CCS Phoenix logo">
+            </div>
+            <div class="col">
                 <h4 class="fw-bold m-0">Phonix Freedon Wall</h4>
                 <p class="mb-1">Live Message Display</p>
             </div>

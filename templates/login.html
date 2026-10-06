@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+    <link rel="icon" href="{{ url_for('static', filename='images/phoenix.png') }}" type="image/png">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/login.css">
@@ -15,6 +16,8 @@
     <div class="row justify-content-center align-items-center h-100 w-100 m-0 seal-backed">
         <div class="col-md-6 col-sm-12 overflow-y-auto">
             <div class="container overflow-y-auto">
+                <img class="phoenix-logo" src="{{ url_for('static', filename='images/phoenix.png') }}"
+                    alt="CCS Phoenix logo">
                 <h1 class="text-center ccs-phoenix">CCS Phoenix</h1>
             </div>
 
