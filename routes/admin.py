@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, session, url_for
+from flask import Blueprint, render_template, request, redirect, session, url_for, jsonify
 import sqlite3
 import os
 
@@ -100,3 +100,42 @@ def admin():
     pending = cursor.fetchall()
     conn.close()
     return render_template('admin.html', pending=pending)
+
+@admin_bp.route("/api/admin", methods=["GET"])
+def rest_api():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, message, username, course, year_level, created_at
+        FROM submission
+        WHERE status = "pending"
+        ORDER BY created_at DESC
+    """)
+    pending = cursor.fetchall()
+    conn.close()
+
+    json = [dict(zip(rows.keys(), rows)) for rows in pending]
+    return json
+
+@admin_bp.route('/api/admin/approve/<int:id>', methods=['POST'])
+def rest_approve_message(id):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute(
+        "UPDATE submission SET status = 'approved' WHERE id = ?",
+        (id,)
+    )
+    conn.commit()
+    conn.close()
+
+    return {"msg": f"Message with id {id} has been approved"}
+
+@admin_bp.route('/api/admin/reject/<int:id>', methods=['POST'])
+def rest_reject_message(id):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM submission WHERE id = ?", (id,))
+    conn.commit()
+    conn.close()
+    return {"msg": f"Message with id {id} has been rejected"}
