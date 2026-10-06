@@ -35,15 +35,16 @@ function displayMessage(parent, data) {
     card_text.textContent = data.message;
 
     const userText = document.createElement('div');
-    if (data.username === "Anon") {
+    if (!data.username) {
         userText.classList.add("bg-secondary");
         userText.classList.add("px-2");
         userText.classList.add("anon");
+        userText.textContent = "Anonymous";
     } else {
         userText.classList.add("username");
+        userText.textContent = data.username;
     }
     userText.classList.add("py-1");
-    userText.textContent = data.username;
 
     card_footer.append(userText);
 
@@ -52,7 +53,12 @@ function displayMessage(parent, data) {
     course.classList.add('mx-2');
     course.classList.add('py-1');
     course.classList.add('px-2');
-    course.textContent = data.course;
+
+    if (data.course) {
+        course.textContent = data.course;
+    } else {
+        course.textContent = "N/A";
+    }
 
     card_footer.append(course);
 
@@ -60,7 +66,12 @@ function displayMessage(parent, data) {
     year.classList.add('year-level');
     year.classList.add('py-1');
     year.classList.add('px-2');
-    year.textContent = data.year_level;
+
+    if (data.year_level) {
+        year.textContent = data.year_level;
+    } else {
+        year.textContent = "N/A";
+    }
 
     card_footer.append(year);
 
@@ -70,10 +81,35 @@ function displayMessage(parent, data) {
     time.classList.add("text-right");
     time.classList.add("py-1");
     time.classList.add("ml-auto");
-    time.textContent = data.created_at;
+    time.textContent = get_time_elapse(data.created_at);
 
     card_footer.append(time);
 }
+
+function get_time_elapse(time){
+    const past = new Date(time.replace(" ", "T") + "Z");
+
+    const now = new Date();
+
+    const ms = now - past;
+
+    const totalSeconds = Math.floor(ms / 1000);
+
+    const hours = Math.floor(totalSeconds / 3600);
+
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+    const seconds = totalSeconds % 60;
+
+    if (minutes === 0 && hours === 0){
+        return `${seconds} sec ago`;
+    } else if(hours === 0 && minutes > 0){
+        return `${minutes} min ago`;
+    }else{
+        return `${hours} hr ago`;
+    }
+}
+
 let isLoading = false;
 setInterval(async () => {
 

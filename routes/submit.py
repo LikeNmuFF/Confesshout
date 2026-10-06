@@ -30,9 +30,20 @@ def form():
         course = request.form.get("course")
         year_level = request.form.get("year_level")
         
-        is_anonymous = request.form.get("anonymous")
+        is_anonymous = request.form.get("is_anonymous")
+
+        print(is_anonymous)
+        print(request.form)
         if is_anonymous == 'on':
             username = "Anonymous"
+            if not course:
+                course = "N/A"
+            if not year_level:
+                year_level = "N/A"
+        if is_anonymous == None:
+            if username == "" or course == "" or year_level == "":
+                print("Anonymous is none")
+                return render_template("form.html", error_message="Name, course, and year level can't be empty if Anonymous is not checked", user_message=message, username=username, course=course, year_level=year_level)
         if not message:
             return render_template("form.html", message="Message is required")
         submit_to_db(message, username, course, year_level)
