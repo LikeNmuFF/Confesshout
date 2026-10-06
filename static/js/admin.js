@@ -44,6 +44,7 @@ function populateTable(data) {
     tr.append(td_year_level);
 
     const td_message_content = document.createElement("td");
+    td_message_content.classList.add("message-cell");
     td_message_content.textContent = data.message;
 
     tr.append(td_message_content);

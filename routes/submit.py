@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
 import sqlite3
 import os
 submit_bp = Blueprint("submit", __name__, template_folder="../templates")
@@ -32,8 +32,6 @@ def form():
         
         is_anonymous = request.form.get("is_anonymous")
 
-        print(is_anonymous)
-        print(request.form)
         if is_anonymous == 'on':
             username = "Anonymous"
             if not course:
@@ -42,10 +40,9 @@ def form():
                 year_level = "N/A"
         if is_anonymous == None:
             if username == "" or course == "" or year_level == "":
-                print("Anonymous is none")
                 return render_template("form.html", error_message="Name, course, and year level can't be empty if Anonymous is not checked", user_message=message, username=username, course=course, year_level=year_level)
         if not message:
             return render_template("form.html", message="Message is required")
         submit_to_db(message, username, course, year_level)
-        return render_template('form.html', message="The message is delivered!")
+        return redirect(url_for("submit.form"))
     return render_template('form.html')
