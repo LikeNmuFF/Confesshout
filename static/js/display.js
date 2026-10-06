@@ -10,7 +10,7 @@ function displayMessage(parent, data) {
 
     const card = document.createElement('div');
     card.classList.add('card');
-    card.classList.add('mb-2')
+    card.classList.add('mb-2');
 
     container.append(card);
 
@@ -27,7 +27,7 @@ function displayMessage(parent, data) {
     card_footer.classList.add('mt-2');
     card_footer.classList.add("px-0");
     card_footer.classList.add("py-2");
-    card_footer.classList.add("d-flex");
+    card_footer.classList.add("d-flex", "overflow-y-auto");
 
     card_body.append(card_text);
     card_body.append(card_footer);
@@ -44,12 +44,12 @@ function displayMessage(parent, data) {
         userText.classList.add("username");
         userText.textContent = data.username;
     }
-    userText.classList.add("py-1");
+    userText.classList.add("py-1", "text-center");
 
     card_footer.append(userText);
 
     const course = document.createElement("div");
-    course.classList.add('course');
+    course.classList.add('course', "align-items-center");
     course.classList.add('mx-2');
     course.classList.add('py-1');
     course.classList.add('px-2');
@@ -86,7 +86,7 @@ function displayMessage(parent, data) {
     card_footer.append(time);
 }
 
-function get_time_elapse(time){
+function get_time_elapse(time) {
     const past = new Date(time.replace(" ", "T") + "Z");
 
     const now = new Date();
@@ -101,11 +101,11 @@ function get_time_elapse(time){
 
     const seconds = totalSeconds % 60;
 
-    if (minutes === 0 && hours === 0){
+    if (minutes === 0 && hours === 0) {
         return `${seconds} sec ago`;
-    } else if(hours === 0 && minutes > 0){
+    } else if (hours === 0 && minutes > 0) {
         return `${minutes} min ago`;
-    }else{
+    } else {
         return `${hours} hr ago`;
     }
 }
